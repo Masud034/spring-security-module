@@ -8,4 +8,5 @@ import java.util.UUID;
 
 @Repository
 public interface AuthorityEntityRepository extends JpaRepository<AuthorityEntity, UUID> {
+    AuthorityEntity findByName(String name);
 }

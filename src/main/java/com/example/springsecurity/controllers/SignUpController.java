@@ -15,8 +15,11 @@ public class SignUpController {
     private final UserService userService;
 
     @PostMapping(value = "/signup")
-    public ResponseEntity addUser(@RequestParam String username, @RequestParam String password) {
-        userService.signUp(username, password);
+    public ResponseEntity addUser(@RequestParam String username,
+                                  @RequestParam String firstName,
+                                  @RequestParam String lastName,
+                                  @RequestParam String password) {
+        userService.signUp(username, firstName, lastName, password);
         return new ResponseEntity(HttpStatus.OK);
     }
 }
